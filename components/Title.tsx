@@ -7,7 +7,7 @@ interface Props {
 
 const Title = ({ title }: { title: string }) => {
     return (
-        <h1 className={`${styles.title}`}>
+        <h1 className="text-center font-bold text-5xl text-white">
             {title}
         </h1>
     )
