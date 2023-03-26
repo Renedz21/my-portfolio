@@ -8,13 +8,11 @@ import Title from './Title'
 const About = () => {
     return (
         <>
-            <div id='about' className='md:my-24 my-0 w-full md:w-auto p-6 md:p-0'>
-
+            <div id='about' className='md:mt-14 my-6 w-full md:w-auto p-6 md:p-0'>
                 <div className='flex flex-col items-center justify-center'>
                     <div className='w-full mb-4 md:mb-16'>
                         <Title title='Acerca de Mí' />
                     </div>
-
                     <div className='grid grid-cols-1 md:grid-cols-2 justify-items-stretch items-center justify-center'>
                         <div className='mb-10 md:mb-0'>
                             <Image src={cloudImage} className='w-full h-[270px] md:h-[450px]' alt='cloud' />
@@ -34,7 +32,6 @@ const About = () => {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
