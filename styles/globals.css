@@ -18,21 +18,15 @@
 }
 
 body {
-    background-color: #101b36;
+    background: linear-gradient(180deg, #0f1b36 0%, #8c96b1 100%);
 }
 
 .text-gradient {
-    background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
-            #defaf6 0.89%,
-            #bef5c3 17.23%,
-            #9df09d 42.04%,
-            #8aeb7d 55.12%,
-            #c1e65c 71.54%,
-            #cccf33 100%);
+    background: #CFCF15;
+    background: radial-gradient(circle farthest-side at top left, #CFCF15 0%, #d68f49 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
 }
 
 @keyframes iconMovement {
@@ -51,4 +45,19 @@ body {
 
 .icon {
     animation: iconMovement 1s infinite;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(113, 103, 165);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(15, 27, 54);
+    border-radius: 15px;
+
 }
