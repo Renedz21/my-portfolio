@@ -4,7 +4,7 @@ interface Props {
     message: string
 }
 export default async function handler({ name, email, message }: Props) {
-    const result = await fetch('http://localhost:3500/api/contact', {
+    const result = await fetch('https://my-portfolio-be.onrender.com/api/contact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
