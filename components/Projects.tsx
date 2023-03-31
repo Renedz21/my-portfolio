@@ -43,7 +43,7 @@ const Projects = () => {
                         {projects.map((project: ProjectProps) => (
                             <div key={project._id} className='w-full md:w-[350px] md:h-[500px] flex items-center justify-start flex-col m-4 p-5 md:m-8 md:p-4 rounded-lg bg-white text-[#000] cursor-pointer transition-all ease-linear duration-300 hover:scale-105'>
                                 <div className='w-full h-auto relative flex items-center justify-center'>
-                                    <Image src={project.image} alt='alt' width={560} height={100} className='w-full h-full object-cover rounded-lg' />
+                                    <Image src={project.image} alt='alt' width={720} height={600} className='w-full h-full object-cover rounded-lg' />
                                     <div className=' absolute inset-0 w-full h-full  hover:bg-[#00000080] rounded-lg opacity-0 hover:opacity-100 transition-all duration-300 ease-linear flex items-center justify-center gap-4'>
                                         {project.githubUrl && (
                                             <Link href={project.githubUrl} rel='noreferrer' target='_blank' >
@@ -62,7 +62,7 @@ const Projects = () => {
                                     </div>
                                 </div>
                                 <div className='mt-5 space-y-2 text-center'>
-                                    <a href={`project/${project._id}`} className='text-xl font-bold text-gray-800 hover:text-indigo-800'>{project.title}</a>
+                                    <a href={`project/${project._id}`} className='text-xl font-bold text-indigo-800'>{project.title}</a>
                                     <p className='text-gray-700 text-justify'>
                                         {project.description}
                                     </p>

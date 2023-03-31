@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <Announcement title='Esta página no esta completa al 100% pero es un resumen de mi vida, espero que les guste.' />
       <div className='container mx-auto'>
-        <Navbar />
+        <Navbar showNavs={true} />
         <Hero />
         <RevealWrapper>
           <About />

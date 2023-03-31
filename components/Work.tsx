@@ -19,7 +19,7 @@ const Work = () => {
                     contentArrowStyle={{ borderRight: '7px solid #7e0000' }}
                     date="2021 - 2022"
                     iconStyle={{ background: 'red', color: '#fff' }}
-                    icon={<SiAngular className='!w-8 !h-8 !-mt-[14.5px] !-ml-[15px]' />}
+                    icon={<SiAngular />}
                 >
                     <h3 className="vertical-timeline-element-title font-bold">FullStack Developer</h3>
                     <h5 className="vertical-timeline-element-subtitle font-semibold">Dasser Innovating Solutions</h5>
@@ -38,7 +38,7 @@ const Work = () => {
                     contentArrowStyle={{ borderRight: '7px solid #b58900' }}
                     date="2022 - 2023"
                     iconStyle={{ background: '#b58900', color: '#fff' }}
-                    icon={<SiExpress className='!w-8 !h-8 !-mt-[14.5px] !-ml-[15px]' />}
+                    icon={<SiExpress />}
                 >
                     <h3 className="vertical-timeline-element-title font-bold">FullStack Developer</h3>
                     <h5 className="vertical-timeline-element-subtitle font-semibold">EXPERIS | Enotria</h5>
@@ -57,7 +57,7 @@ const Work = () => {
                     contentArrowStyle={{ borderRight: '7px solid  #1a76c0' }}
                     date="2023 - Presente"
                     iconStyle={{ background: '#1a76c0', color: '#fff' }}
-                    icon={<IoLogoReact className='!w-8 !h-8 !-mt-[14.5px] !-ml-[15px]' />}
+                    icon={<IoLogoReact />}
                 >
                     <h3 className="vertical-timeline-element-title font-bold">FullStack Developer</h3>
                     <h5 className="vertical-timeline-element-subtitle font-semibold">Digitalia Tech. | JUNTOZ</h5>
