@@ -32,7 +32,7 @@ const ProjectDetail = () => {
 
     useEffect(() => {
         const getOneProject = async () => {
-            const result = await fetch(`http://localhost:3500/api/project/${id}`);
+            const result = await fetch(`https://my-portfolio-be.onrender.com/api/project/${id}`);
             const data = await result.json();
             console.log(data);
             setProjectData(data);
