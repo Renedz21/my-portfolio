@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-// import image from '@/assets/original-c2a840d4dd432fd4b0d2390552a8b60a.webp'
 import Title from './Title'
 import Link from 'next/link'
+import Loader from './Loader'
+
+import axios from 'axios'
 
 type ProjectProps = {
     _id: string,
@@ -17,30 +19,30 @@ type ProjectProps = {
 const Projects = () => {
 
     const [projects, setProjects] = useState([])
+    const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
-        fetch(`/api/project`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                setProjects(data)
-            })
+        const getProjects = async () => {
+            const res = await axios.get('https://my-portfolio-be.onrender.com/api/project')
+            setProjects(res.data)
+            setIsLoading(false)
+        }
+        getProjects()
     }, [])
 
     return (
-        <>
-            <div id='projects' className='w-full'>
-                <div className='flex flex-col flex-1'>
-                    <div className='mb-4'>
-                        <Title title='Proyectos' />
-                    </div>
-                    <div className='flex flex-wrap justify-center items-center mx-auto'>
-                        {/* map */}
-                        {projects.map((project: ProjectProps) => (
+        <div id='projects' className='w-full'>
+            <div className='flex flex-col flex-1'>
+                <div className='mb-4'>
+                    <Title title='Proyectos' />
+                </div>
+                <div className='flex flex-wrap justify-center items-center mx-auto'>
+                    {isLoading ? (
+                        <div className='py-10'>
+                            <Loader />
+                        </div>
+                    ) : (
+                        projects.map((project: ProjectProps) => (
                             <div key={project._id} className='w-full md:w-[350px] md:h-[500px] flex items-center justify-start flex-col m-4 p-5 md:m-8 md:p-4 rounded-lg bg-white text-[#000] cursor-pointer transition-all ease-linear duration-300 hover:scale-105'>
                                 <div className='w-full h-auto relative flex items-center justify-center'>
                                     <Image src={project.image} alt='alt' width={720} height={600} className='w-full h-full object-cover rounded-lg' />
@@ -62,17 +64,17 @@ const Projects = () => {
                                     </div>
                                 </div>
                                 <div className='mt-5 space-y-2 text-center'>
-                                    <a href={`project/${project._id}`} className='text-xl font-bold text-indigo-800'>{project.title}</a>
+                                    <Link href={`project/${project._id}`} className='text-xl font-bold text-indigo-800'>{project.title}</Link>
                                     <p className='text-gray-700 text-justify'>
                                         {project.description}
                                     </p>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        ))
+                    )}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

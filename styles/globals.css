@@ -18,8 +18,9 @@
 }
 
 body {
-    background: linear-gradient(180deg, #0f1b36 0%, #8c96b1 100%);
+    background: linear-gradient(to left bottom, #0f1b36, #8c96b1);
 }
+
 
 .text-gradient {
     background: #CFCF15;

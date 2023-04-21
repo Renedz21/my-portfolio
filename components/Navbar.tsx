@@ -56,7 +56,7 @@ const Navbar: FC<NavbarProps> = ({
                             </>
                         ) : (
                             <>
-                                <Link href='/' className="my-2 text-white transition-colors duration-300 transform dark:text-gray-200 hover:text-cyan-300 dark:hover:text-blue-400 md:mx-4 md:my-0" >
+                                <Link href='/' className="my-2 text-white transition-colors duration-300 transform dark:text-gray-200 hover:text-cyan-300 block md:hidden dark:hover:text-blue-400 md:mx-4 md:my-0" >
                                     Inicio
                                 </Link>
                             </>
