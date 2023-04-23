@@ -18,9 +18,7 @@ const Home = () => {
         <RevealWrapper>
           <About />
         </RevealWrapper>
-        <RevealWrapper reset={true}>
-          <Work />
-        </RevealWrapper>
+        <Work />
         <RevealWrapper>
           <Projects />
         </RevealWrapper>
