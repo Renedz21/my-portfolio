@@ -1,17 +1,30 @@
+import { useState, useEffect } from 'react';
+
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
 import { SiAngular, SiExpress } from 'react-icons/si';
 import { IoLogoReact } from 'react-icons/io5';
 import Title from './Title';
+
 const Work = () => {
+
+    const [showAnimation, setShowAnimation] = useState(false)
+
+    useEffect(() => {
+        const width = window.innerWidth
+        if (width > 768) {
+            setShowAnimation(true)
+        }
+    }, [])
+
     return (
         <div id='work' className='md:mb-10 mb-11'>
             <div className='my-10'>
                 <Title title='Experiencia' />
             </div>
             <VerticalTimeline
-                animate={true}
+                animate={showAnimation}
             >
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"

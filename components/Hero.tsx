@@ -4,22 +4,26 @@ import styles from '@/constants/style'
 import Image from 'next/image'
 import imagePerson from '@/assets/undraw_pair_programming_re_or4x.svg'
 
+import axios from 'axios'
+
 const Hero = () => {
 
-    const cvLink = 'https://my-personal-aws-bucket.s3.amazonaws.com/Curriculum.pdf'
+    //2058ff48-d4f2-4d50-bbe9-0c0602fd58a8
+    const cvLink = 'https://firebasestorage.googleapis.com/v0/b/react-ecommerce-project-79fb8.appspot.com/o/2058ff48-d4f2-4d50-bbe9-0c0602fd58a8?alt=media&token=0aacfe89-1563-4f14-9cda-5fdb783e6b31'
     const [isLoading, setIsLoading] = useState(false)
 
     const handleDownload = (url: string) => {
         setIsLoading(true)
-
-        // fetch(url).then(response => {
-        //     console.log(response);
-        //     return response.blob();
-        // }).then(blob => {
-        //     FileSaver.saveAs(blob, 'Curriculum.pdf');
-        // }).catch(error => {
-        //     console.log(error);
-        // });
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = "blob";
+        xhr.onload = () => {
+            const blob = xhr.response;
+            console.log(blob)
+            // hacer algo con el archivo descargado
+        };
+        xhr.open("GET", url);
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+        xhr.send();
     }
 
     return (
