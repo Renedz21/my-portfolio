@@ -42,10 +42,7 @@ const Projects = () => {
                         </div>
                     ) : isError ? (
                         <div className='text-red-800 bg-white px-9 py-5 rounded-md'>
-                            <h1 className='font-semibold text-lg'>Oops...! Eso no debió ocurrir.</h1>
-                            <p>
-                                {error.message}
-                            </p>
+                            <h1 className='font-semibold text-lg'>Oops...! Eso no debió ocurrir. Algo salió mal</h1>
                         </div>
                     ) : (
                         data.map((project: ProjectProps) => (
